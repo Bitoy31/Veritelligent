@@ -1,0 +1,609 @@
+[{
+  "_id": {
+    "$oid": "68772452a6a6130bfadb49d8"
+  },
+  "title": "Test Quiz 1",
+  "description": "Testing lang",
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "teacherId": {
+    "$oid": "683186f13f09436e8fa4d67a"
+  },
+  "status": "closed",
+  "questions": [
+    {
+      "text": "Pogi ba ako?",
+      "options": [
+        {
+          "text": "Yes",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68772452a6a6130bfadb49da"
+          }
+        },
+        {
+          "text": "Of course",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68772452a6a6130bfadb49db"
+          }
+        },
+        {
+          "text": "Maybe",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "68772452a6a6130bfadb49dc"
+          }
+        }
+      ],
+      "points": 1,
+      "timeLimit": 5,
+      "_id": {
+        "$oid": "68772452a6a6130bfadb49d9"
+      }
+    },
+    {
+      "text": "_____, I'm Gay.",
+      "options": [
+        {
+          "text": "Yes",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68772452a6a6130bfadb49de"
+          }
+        },
+        {
+          "text": "No",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68772452a6a6130bfadb49df"
+          }
+        },
+        {
+          "text": "All of the Above",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68772452a6a6130bfadb49e0"
+          }
+        },
+        {
+          "text": "Maybe",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "68772452a6a6130bfadb49e1"
+          }
+        }
+      ],
+      "points": 5,
+      "timeLimit": 30,
+      "_id": {
+        "$oid": "68772452a6a6130bfadb49dd"
+      }
+    }
+  ],
+  "settings": {
+    "shuffleQuestions": false,
+    "shuffleOptions": true,
+    "showFeedbackAfterEach": false,
+    "timeLimit": 0,
+    "passingScore": 60,
+    "allowRetake": false,
+    "maxAttempts": 1
+  },
+  "dateCreated": {
+    "$date": "2025-07-16T04:02:26.399Z"
+  },
+  "lastModified": {
+    "$date": "2025-08-13T10:50:44.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6877274ba6a6130bfadb4a20"
+  },
+  "title": "Test II",
+  "description": "Syempre testing lang ulit",
+  "subjectId": {
+    "$oid": "6866538da88d22fb46306bf5"
+  },
+  "teacherId": {
+    "$oid": "683186f13f09436e8fa4d67a"
+  },
+  "status": "draft",
+  "questions": [
+    {
+      "text": "Test Q1",
+      "options": [
+        {
+          "text": "Asd",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "6877274ba6a6130bfadb4a22"
+          }
+        },
+        {
+          "text": "Dasa",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "6877274ba6a6130bfadb4a23"
+          }
+        },
+        {
+          "text": "a",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "6877274ba6a6130bfadb4a24"
+          }
+        }
+      ],
+      "points": 1,
+      "timeLimit": 30,
+      "_id": {
+        "$oid": "6877274ba6a6130bfadb4a21"
+      }
+    },
+    {
+      "text": "Test Q2",
+      "options": [
+        {
+          "text": "Dafq",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "6877274ba6a6130bfadb4a26"
+          }
+        },
+        {
+          "text": "Dashit",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "6877274ba6a6130bfadb4a27"
+          }
+        }
+      ],
+      "points": 1,
+      "timeLimit": 30,
+      "_id": {
+        "$oid": "6877274ba6a6130bfadb4a25"
+      }
+    }
+  ],
+  "settings": {
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "showFeedbackAfterEach": false,
+    "timeLimit": 0,
+    "passingScore": 60,
+    "allowRetake": false,
+    "maxAttempts": 1
+  },
+  "dateCreated": {
+    "$date": "2025-07-16T04:15:07.370Z"
+  },
+  "lastModified": {
+    "$date": "2025-07-16T04:15:07.373Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687884a91d38724c51c09b45"
+  },
+  "title": "Test 3",
+  "description": "Testing lang ulit",
+  "subjectId": {
+    "$oid": "6866ac134692cc965f77983b"
+  },
+  "teacherId": {
+    "$oid": "683186f13f09436e8fa4d67a"
+  },
+  "status": "draft",
+  "questions": [
+    {
+      "text": "TQ1",
+      "options": [
+        {
+          "text": "A",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "687884a91d38724c51c09b47"
+          }
+        },
+        {
+          "text": "B",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "687884a91d38724c51c09b48"
+          }
+        }
+      ],
+      "points": 10,
+      "timeLimit": 0,
+      "_id": {
+        "$oid": "687884a91d38724c51c09b46"
+      }
+    },
+    {
+      "text": "TQ2",
+      "options": [
+        {
+          "text": "C",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "687884a91d38724c51c09b4a"
+          }
+        },
+        {
+          "text": "D",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "687884a91d38724c51c09b4b"
+          }
+        }
+      ],
+      "points": 1,
+      "timeLimit": 0,
+      "_id": {
+        "$oid": "687884a91d38724c51c09b49"
+      }
+    }
+  ],
+  "settings": {
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "showFeedbackAfterEach": false,
+    "timeLimit": 0,
+    "passingScore": 60,
+    "allowRetake": false,
+    "maxAttempts": 1
+  },
+  "dateCreated": {
+    "$date": "2025-07-17T05:05:45.792Z"
+  },
+  "lastModified": {
+    "$date": "2025-08-10T11:30:22.836Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "689882c065245356a97e9459"
+  },
+  "title": "Data Structures",
+  "description": "Basic Concepts of Data Handling",
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "teacherId": {
+    "$oid": "683186f13f09436e8fa4d67a"
+  },
+  "status": "published",
+  "questions": [
+    {
+      "text": "Which data structure uses FIFO (First In First Out)?",
+      "options": [
+        {
+          "text": "Queue",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689882c065245356a97e945b"
+          }
+        },
+        {
+          "text": "Stack",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e945c"
+          }
+        },
+        {
+          "text": "Tree",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e945d"
+          }
+        }
+      ],
+      "points": 2,
+      "timeLimit": 10,
+      "_id": {
+        "$oid": "689882c065245356a97e945a"
+      }
+    },
+    {
+      "text": "Select all that are linear data structures:",
+      "options": [
+        {
+          "text": "Array",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689882c065245356a97e945f"
+          }
+        },
+        {
+          "text": "Stack",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689882c065245356a97e9460"
+          }
+        },
+        {
+          "text": "Graph",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e9461"
+          }
+        },
+        {
+          "text": "Queue",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689882c065245356a97e9462"
+          }
+        }
+      ],
+      "points": 4,
+      "timeLimit": 10,
+      "_id": {
+        "$oid": "689882c065245356a97e945e"
+      }
+    },
+    {
+      "text": "Which of the following is NOT a type of tree traversal?",
+      "options": [
+        {
+          "text": "Inorder",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e9464"
+          }
+        },
+        {
+          "text": "Preorder",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e9465"
+          }
+        },
+        {
+          "text": "Sideorder",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689882c065245356a97e9466"
+          }
+        },
+        {
+          "text": "Postorder",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e9467"
+          }
+        }
+      ],
+      "points": 2,
+      "timeLimit": 10,
+      "_id": {
+        "$oid": "689882c065245356a97e9463"
+      }
+    },
+    {
+      "text": "What is the worst-case time complexity for searching in a binary search tree (BST)",
+      "options": [
+        {
+          "text": "O(log n)",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e9469"
+          }
+        },
+        {
+          "text": "O(n)",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689882c065245356a97e946a"
+          }
+        },
+        {
+          "text": "O(1)",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e946b"
+          }
+        },
+        {
+          "text": "O(n log n)",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689882c065245356a97e946c"
+          }
+        }
+      ],
+      "points": 2,
+      "timeLimit": 10,
+      "_id": {
+        "$oid": "689882c065245356a97e9468"
+      }
+    }
+  ],
+  "settings": {
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "showFeedbackAfterEach": true,
+    "timeLimit": 0,
+    "passingScore": 60,
+    "allowRetake": false,
+    "maxAttempts": 1
+  },
+  "dateCreated": {
+    "$date": "2025-08-10T11:30:08.430Z"
+  },
+  "lastModified": {
+    "$date": "2025-08-10T11:30:34.148Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "title": "IT 111 A",
+  "description": "lalalalla",
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "teacherId": {
+    "$oid": "683186f13f09436e8fa4d67a"
+  },
+  "status": "published",
+  "questions": [
+    {
+      "text": "Who is the?",
+      "options": [
+        {
+          "text": "&&7asa7676712e2 ",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689ec61abb798e5f78e4c11d"
+          }
+        },
+        {
+          "text": "wdw 5363t rgregregre",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689ec61abb798e5f78e4c11e"
+          }
+        },
+        {
+          "text": "This is the answer",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689ec61abb798e5f78e4c11f"
+          }
+        },
+        {
+          "text": "This is also the answer",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689ec61abb798e5f78e4c120"
+          }
+        }
+      ],
+      "points": 1,
+      "timeLimit": 5,
+      "_id": {
+        "$oid": "689ec61abb798e5f78e4c11c"
+      }
+    },
+    {
+      "text": "Second question?",
+      "options": [
+        {
+          "text": "TRUE ANSWER THIS",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689ec61abb798e5f78e4c122"
+          }
+        },
+        {
+          "text": "FALSE NOT",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689ec61abb798e5f78e4c123"
+          }
+        },
+        {
+          "text": "THIS IS NOT THE ANSWER",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689ec61abb798e5f78e4c124"
+          }
+        }
+      ],
+      "points": 2,
+      "timeLimit": 10,
+      "_id": {
+        "$oid": "689ec61abb798e5f78e4c121"
+      }
+    }
+  ],
+  "settings": {
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "showFeedbackAfterEach": false,
+    "timeLimit": 0,
+    "passingScore": 60,
+    "allowRetake": false,
+    "maxAttempts": 1
+  },
+  "dateCreated": {
+    "$date": "2025-08-15T05:31:06.529Z"
+  },
+  "lastModified": {
+    "$date": "2025-08-15T05:33:19.627Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "689ecaa9bb798e5f78e4c2db"
+  },
+  "title": "Q1",
+  "description": "Enroll Enroll",
+  "subjectId": {
+    "$oid": "689eca5ebb798e5f78e4c2ce"
+  },
+  "teacherId": {
+    "$oid": "689eca34bb798e5f78e4c2c4"
+  },
+  "status": "published",
+  "questions": [
+    {
+      "text": "Answer 1",
+      "options": [
+        {
+          "text": "1",
+          "isCorrect": false,
+          "_id": {
+            "$oid": "689ecaa9bb798e5f78e4c2dd"
+          }
+        },
+        {
+          "text": "2",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689ecaa9bb798e5f78e4c2de"
+          }
+        },
+        {
+          "text": "3",
+          "isCorrect": true,
+          "_id": {
+            "$oid": "689ecaa9bb798e5f78e4c2df"
+          }
+        }
+      ],
+      "points": 1,
+      "timeLimit": 20,
+      "_id": {
+        "$oid": "689ecaa9bb798e5f78e4c2dc"
+      }
+    }
+  ],
+  "settings": {
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "showFeedbackAfterEach": false,
+    "timeLimit": 0,
+    "passingScore": 60,
+    "allowRetake": false,
+    "maxAttempts": 1
+  },
+  "dateCreated": {
+    "$date": "2025-08-15T05:50:33.872Z"
+  },
+  "lastModified": {
+    "$date": "2025-08-15T05:50:36.976Z"
+  },
+  "__v": 0
+}]

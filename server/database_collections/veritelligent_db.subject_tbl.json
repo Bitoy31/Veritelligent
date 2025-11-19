@@ -1,0 +1,93 @@
+[{
+  "_id": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "code": "IT 111",
+  "teacher": {
+    "_id": "683186f13f09436e8fa4d67a",
+    "name": "Bitoy D. Great"
+  },
+  "name": "Introduction to Computing",
+  "DateCreated": "",
+  "enrolledStudents": [
+    {
+      "studentId": "684679995b32eb1c62307013",
+      "status": "enrolled"
+    },
+    {
+      "studentId": "68654a110b9b8bd691765d1a",
+      "status": "enrolled"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6866538da88d22fb46306bf5"
+  },
+  "code": "IT 311",
+  "name": "Networking III",
+  "teacher": {
+    "_id": "683186f13f09436e8fa4d67a",
+    "name": "Bitoy D. Great"
+  },
+  "DateCreated": "2025-07-03T09:55:25.199Z",
+  "enrolledStudents": [
+    {
+      "studentId": "684679995b32eb1c62307013",
+      "status": "pending"
+    },
+    {
+      "studentId": "68654a110b9b8bd691765d1a",
+      "status": "pending"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "68665c49b73b8efd2b8ee168"
+  },
+  "code": "IT 211",
+  "name": "Programming 101",
+  "teacher": {
+    "_id": "683186f13f09436e8fa4d67a",
+    "name": "Bitoy D. Great"
+  },
+  "DateCreated": "2025-07-03T10:32:40.993Z",
+  "enrolledStudents": [
+    {
+      "studentId": "684679995b32eb1c62307013",
+      "status": "pending"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6866ac134692cc965f77983b"
+  },
+  "code": "IT 232",
+  "name": "Test Subject 2",
+  "teacher": {
+    "_id": "683186f13f09436e8fa4d67a",
+    "name": "Bitoy D. Great"
+  },
+  "DateCreated": "2025-07-03T16:13:07.294Z",
+  "enrolledStudents": [
+    {
+      "studentId": "684679995b32eb1c62307013",
+      "status": "pending"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "689ec94bbb798e5f78e4c2b2"
+  },
+  "code": "IT 411",
+  "name": "Sample Sample",
+  "teacher": {
+    "_id": "683186f13f09436e8fa4d67a",
+    "name": "Bitoy D. Great"
+  },
+  "DateCreated": "2025-08-15T05:44:43.639Z",
+  "enrolledStudents": []
+}]
