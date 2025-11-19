@@ -1,0 +1,80 @@
+Grid Quest — Design Brief and Finalized Game Flow
+Name: Grid Quest
+Purpose: A team-based, turn-driven classroom game using a category grid of customizable point-valued clues. Designed for projection in class with responsive student devices. UI remains unified for teacher/student views 
+	1. No external branding/themes like Kahoot
+	2. Players, Teams, and Representatives
+Teams: 2–8 groups. If present students < selected groups, cap groups to present.
+Balanced distribution: Evenly spread students, distributing remainders to the first groups.
+Representatives: One active player per team per turn; representatives rotate each turn within their team (queue-style; skip absent).
+
+Board Configuration
+Categories: 3–7 (default 5).
+Levels per category: 3–5 (default 5).
+Per-clue custom: Each tile defines its own points, prompt, acceptedAnswers[] (synonyms), optional timeLimitSec, and optional media. Points are not forced to a fixed pattern.
+Answer Rules
+Input: Text only.
+Matching: Case-insensitive, spelling-sensitive; trim/collapse whitespace; must exactly match one of acceptedAnswers[] after normalization. No fuzzy or partial credit in v1.
+
+Scoring
+Correct: Add the clue’s point value.
+Wrong: Deduct the clue’s point value if “wrong-answer deduction” setting is ON (default ON). If OFF, wrong yields 0.
+
+Timing and Reveal
+Pre-timer delay: 3 seconds after clue reveal.
+Answer timer: From each clue’s timeLimitSec (default 20s if not set).
+Auto-submit: On timeout, auto-submit current text (can be empty); ignore late messages.
+Suspense: ~2-second delay, then reveal correctness and update the scoreboard.
+
+Turn Engine (No Buzz-In; Pure Turn-Based)
+Game randomly selects the starting team.
+A visible “Next: Team X” indicator shows the current team and who’s up next.
+Current team selects a tile (category + level). The clue is revealed to both teacher and students.
+3s pre-timer delay, then the answer timer begins.
+Only the current team’s representative sees an answer input; others are spectators.
+After reveal and scoring, the teacher presses Next/Play to proceed.
+Representatives rotate within the team that just played; turn advances to the next team in order.
+The tile becomes disabled and cannot be selected again.
+
+End Conditions
+End when all tiles are taken or when the teacher presses End.
+Persist session end and standings.
+
+Data and Persistence
+Task (“Grid Quest Task”):
+subjectId, title, description, status: draft|published|closed
+settings: { allowNegativeOnWrong: boolean (default true), preTimerSec: 3, suspenseRevealSec: 2 }
+categories: [{ name, clues: [{ points, timeLimitSec?, prompt, acceptedAnswers: string[], media?: { type, url } }] }]
+
+Session:
+Reuse GameSession with category: 'party', gameType: 'grid_quest', isTeamBased: true
+roomCode, teams: [{ teamId, name, memberIds[] }], representatives: { [teamId]: studentId }
+status: active|ended, startedAt, endedAt
+Attempts/Logs (for analytics):
+Per-turn log: { teamId, repId, catIdx, clueIdx, submittedText, correct, pointsDelta, timeTakenSec }
+Used later for session analytics and leaderboards.
+Sockets (aligned to your existing live-quiz pattern)
+Reuse: host_register, join_room, lobby_update, countdown_update, timer_tick, pause_timer, resume_timer, finish_game, restart_game.
+Grid Quest–specific:
+team_setup → { teams[], representatives }
+board_state → { tiles: [{ catIdx, clueIdx, status: 'available'|'taken'|'disabled' }] }
+select_clue → clue_reveal → { catIdx, clueIdx, prompt, points, timeLimitSec }
+answer_submit (from active representative), answers_locked (on timeout)
+answer_result → { teamId, correct, pointsAwarded }
+score_update → { scores: [{ teamId, score }] }
+next_turn → { teamId }
+
+UI Overview
+Teacher
+Task Builder: category grid editor, per-clue points/time, accepted answers, status controls.
+Lobby & Grouping: enrolled vs present lists; 2–8 team auto-balance; manual edit; choose starting team; representative assignment or auto.
+Host Board: grid with per-tile state; team sidebar with scores; “Next: Team X” indicator; reveal + timer view; controls: mark result, Next/Play, End.
+
+Student
+Lobby: team assignment, “You’re the representative” label if selected.
+Board View: read-only grid with current/next indicators.
+Clue View: answer input for representative only; global timer; correctness reveal.
+
+Visual/UX Notes
+Palette: ~50% orange, 30% pastel white, 10% pastel blue.
+Consistency: Maintain unified layout patterns across teacher and student views 1; avoid third-party game branding 2.
+Responsiveness: Mobile-friendly interactions and readable grid on smaller devices.
