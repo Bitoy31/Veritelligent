@@ -1,0 +1,938 @@
+/* Quiz Taking Styles */
+.quiz-taking {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.quiz-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+.timer {
+  background: #03a696;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.timer.timer-warning {
+  background: #e74c3c;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.quiz-progress {
+  position: relative;
+  /*height: 4px;*/
+  background: #f0f0f0;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 100%;
+  background: #03a696;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.quiz-progress span {
+  position: static;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.question-container {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-button {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  color: #2c3e50;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.option-button:hover {
+  border-color: #03a696;
+  background: #f0f9f8;
+}
+
+.option-button.selected {
+  border-color: #03a696;
+  background: #03a696;
+  color: white;
+}
+
+.quiz-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-button, .submit-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-button {
+  background: #f0f0f0;
+  border: none;
+  color: #666;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-button {
+  background: #03a696;
+  border: none;
+  color: white;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #028677;
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin: 0 0 1rem;
+  color: #2c3e50;
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.quiz-taking .btn-secondary, 
+.quiz-taking .btn-primary,
+.modal-content .btn-secondary, 
+.modal-content .btn-primary {
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quiz-taking .btn-secondary,
+.modal-content .btn-secondary {
+  background: #f0f0f0;
+  border: none;
+  color: #666;
+}
+
+.quiz-taking .btn-secondary:hover:not(:disabled),
+.modal-content .btn-secondary:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.quiz-taking .btn-primary,
+.modal-content .btn-primary {
+  background: #03a696;
+  border: none;
+  color: white;
+}
+
+.quiz-taking .btn-primary:hover:not(:disabled),
+.modal-content .btn-primary:hover:not(:disabled) {
+  background: #028677;
+}
+
+/* Student Party Games Grid Styles */
+.student-party-games.quiz-games-container,
+.quiz-games-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Ensure student party games take precedence */
+.student-party-games .quiz-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.student-party-games .quiz-game-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+/* Unified back button (matches Quiz Management) */
+.qm-back-btn {
+  background: none;
+  border: none;
+  color: #03a696;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+.qm-back-btn:hover {
+  transform: translateX(-5px);
+}
+.qm-back-btn i {
+  font-size: 1.05rem;
+}
+
+.quiz-game-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(3,166,150,0.1), rgba(3,166,150,0));
+  z-index: 1;
+}
+
+.quiz-game-card.quiz {
+  background: linear-gradient(135deg, #03cfbb, #03a696);
+}
+
+.quiz-game-card.memory {
+  background: linear-gradient(135deg, #ffd700, #ffc400);
+}
+
+.quiz-game-card.puzzle {
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+}
+
+/* Party Games Header */
+.party-games-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 900px;
+}
+
+.party-games-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  font-family: 'Fredoka One', cursive;
+}
+
+.party-games-header p {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Party Game Card Specific Styles */
+.quiz-game-card.quiz-battle {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+}
+
+.quiz-game-card.team-challenge {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.3);
+}
+
+.quiz-game-card.buzzer-battle {
+  background: linear-gradient(135deg, #7e22ce, #a855f7);
+  box-shadow: 0 8px 32px rgba(126, 34, 206, 0.3);
+}
+
+.quiz-game-card.trivia-tournament {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3);
+}
+
+.quiz-game-card.speed-round {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 8px 32px rgba(239, 68, 68, 0.3);
+}
+
+.quiz-game-card.group-memory {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+}
+
+.quiz-game-card.knowledge-relay {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.3);
+}
+
+/* Game Features */
+.game-features {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.game-features span {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.game-features span i {
+  font-size: 0.75rem;
+}
+
+/* Hover animations for party games */
+.quiz-game-card.quiz-battle:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(139, 92, 246, 0.4);
+}
+
+.quiz-game-card.team-challenge:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(6, 182, 212, 0.4);
+}
+
+.quiz-game-card.buzzer-battle:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(126, 34, 206, 0.4);
+}
+
+.quiz-game-card.trivia-tournament:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(245, 158, 11, 0.4);
+}
+
+.quiz-game-card.speed-round:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(239, 68, 68, 0.4);
+}
+
+.quiz-game-card.group-memory:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(16, 185, 129, 0.4);
+}
+
+.quiz-game-card.knowledge-relay:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(236, 72, 153, 0.4);
+}
+
+.quiz-game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.quiz-game-card .game-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.quiz-game-card .game-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.quiz-game-card .game-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  margin-top: 0.5rem;
+}
+
+/* Quiz Selection Styles */
+.quiz-selection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Scoped back button for quiz-selection page */
+.quiz-selection .back-button {
+  background: none;
+  border: 1px solid #d1d9e6;
+  color: #0f766e;
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.quiz-selection .back-button:hover {
+  background: #f7fafc;
+  border-color: #c3cfe6;
+}
+
+.quiz-selection h1 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.join-options {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: none;
+}
+
+.join-options .join-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border: 1px solid #eef2f7;
+}
+
+.join-options h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Ensure instructional text is readable on light backgrounds */
+.quiz-selection p,
+.join-options .join-card p,
+.join-options .join-card label,
+.join-options .join-card span {
+  color: #2c3e50;
+}
+.code-entry input {
+  color: #2c3e50;
+}
+
+/* Removed quiz-list UI */
+
+/* Removed quiz-item styles */
+
+/* Removed hover styles */
+
+/* Removed */
+
+/* Removed */
+
+/* Removed */
+
+.join-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.code-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.code-entry input {
+  padding: 0.8rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  text-align: center;
+}
+
+.code-entry input:focus {
+  border-color: #03a696;
+  outline: none;
+}
+
+.code-entry button,
+.qr-button,
+.secondary-button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.code-entry button {
+  background: #03a696;
+  color: white;
+}
+
+.code-entry button:hover {
+  background: #028677;
+}
+
+.qr-button {
+  background: #f3e230;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.qr-button:hover {
+  background: #e6d52d;
+}
+
+.qr-button i {
+  font-size: 1.2rem;
+}
+
+.secondary-button {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.secondary-button:hover {
+  background: #e0e0e0;
+}
+
+.qr-scanner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* QR Scanner Card */
+.qr-scanner {
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Html5-qrcode injected container */
+#qr-reader {
+  /* Ensure the scanner container fits nicely */
+  width: 100% !important;
+  min-height: 200px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#qr-reader video,
+#qr-reader img,
+#qr-reader canvas {
+  /* width: 100% !important; */
+  height: auto !important;
+  border-radius: 10px;
+  /* display: block; */
+}
+
+/* Subtle toolbar & status styling from library */
+#qr-reader button {
+  background: #03a696;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#qr-reader button:hover {
+  background: #028677;
+}
+
+#qr-reader__status_span,
+#qr-reader__dashboard_section_csr span,
+#qr-reader span {
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Restart button shown after a successful scan */
+.restart-scanner-button {
+  margin-top: 0.75rem;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.restart-scanner-button:hover {
+  background: #e9ecef;
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .qr-scanner {
+    max-width: 100%;
+    padding: 0.6rem;
+  }
+
+  #qr-reader {
+    min-height: 160px;
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+.loading i {
+  font-size: 1.2rem;
+  color: #03a696;
+}
+
+.error {
+  color: #e74c3c;
+  text-align: center;
+  padding: 1rem;
+  background: #fdf3f2;
+  border-radius: 6px;
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 992px) {
+  .student-party-games .quiz-games-grid,
+  .quiz-games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  
+  .student-party-games .party-games-header,
+  .party-games-header {
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .student-party-games .party-games-header h1,
+  .party-games-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .quiz-taking {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .quiz-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .timer {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .question-text {
+    font-size: 1.1rem;
+  }
+
+  .option-button {
+    padding: 0.8rem;
+  }
+
+  .nav-button, .submit-button {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .student-party-games.quiz-games-container,
+  .quiz-games-container {
+    padding: 1rem;
+  }
+
+  .student-party-games .quiz-games-grid,
+  .quiz-games-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .student-party-games .quiz-game-card,
+  .quiz-game-card {
+    min-height: 200px;
+    padding: 1.4rem;
+  }
+
+  .quiz-game-card .game-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .quiz-game-card .game-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-game-card .game-subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .quiz-selection {
+    padding: 1rem;
+  }
+
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-item {
+    padding: 1rem;
+  }
+
+  .quiz-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Party Games Mobile Styles */
+  .party-games-header {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .party-games-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .party-games-header p {
+    font-size: 1rem;
+  }
+
+  .game-features {
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .game-features span {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-games-grid {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .quiz-game-card {
+    min-height: 180px;
+    padding: 1.25rem;
+  }
+
+  .quiz-game-card .game-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-game-card .game-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .quiz-game-card .game-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .party-games-header {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .party-games-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .party-games-header p {
+    font-size: 0.95rem;
+  }
+
+  .game-features span {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.7rem;
+  }
+} 

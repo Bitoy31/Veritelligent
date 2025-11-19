@@ -1,0 +1,748 @@
+/* Live Solo Quiz Game Styles */
+.solo-quiz-game {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fullscreen overlay mode fills viewport completely */
+.solo-quiz-game.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+.fullscreen-prompt {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.fullscreen-prompt-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.fullscreen-prompt-card i {
+  font-size: 1.25rem;
+}
+
+/* Loading State */
+.solo-quiz-game.loading {
+  justify-content: center;
+  align-items: center;
+}
+
+.solo-quiz-game .loading-spinner {
+  text-align: center;
+}
+
+.solo-quiz-game .loading-spinner i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.solo-quiz-game .loading-spinner p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Game Header */
+.solo-quiz-game .game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  gap: 12px;
+}
+
+.solo-quiz-game .back-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 9999px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  font-size: 0.95rem;
+  position: relative;
+  left: 0;
+  z-index: 1;
+}
+
+.solo-quiz-game .back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
+
+.game-info h2 {
+  font-weight: 700;
+  margin: 0 0 0 0;
+}
+
+/* Ensure the header lays out back button and title without overlap */
+.solo-quiz-game .game-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+.solo-quiz-game .fs-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 9999px;
+  height: 40px;
+  width: 40px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.solo-quiz-game .fs-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.solo-quiz-game .back-button {
+  grid-column: 1;
+}
+
+.solo-quiz-game .game-info {
+  grid-column: 2;
+}
+
+.question-counter {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+/* Lobby layout */
+.solo-quiz-game .lobby-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.solo-quiz-game .lobby-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.solo-quiz-game .lobby-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.solo-quiz-game .lobby-meta .meta-item { text-align: center; }
+.solo-quiz-game .lobby-meta .meta-label { font-size: 0.85rem; opacity: 0.85; }
+.solo-quiz-game .lobby-meta .meta-value { font-size: 1.25rem; font-weight: 800; }
+
+.solo-quiz-game .players-toggle {
+  display: none;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  color: white;
+  font-weight: 700;
+}
+
+.solo-quiz-game .players-sidebar {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  padding: 0.75rem;
+  height: calc(100vh - 200px);
+  overflow: hidden;
+}
+
+.solo-quiz-game .players-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem 0.5rem;
+}
+
+.solo-quiz-game .players-header h3 { margin: 0; font-size: 1rem; }
+.solo-quiz-game .count-badge { background: rgba(255,255,255,0.2); padding: 0.15rem 0.5rem; border-radius: 9999px; font-weight: 700; }
+
+.solo-quiz-game .players-list {
+  overflow-y: auto;
+  height: calc(100% - 40px);
+  padding-right: 0.25rem;
+}
+
+.solo-quiz-game .player-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.35rem;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.solo-quiz-game .avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.solo-quiz-game .player-info { display: flex; flex-direction: column; }
+.solo-quiz-game .player-name { font-weight: 700; }
+.solo-quiz-game .player-status { font-size: 0.85rem; opacity: 0.9; }
+
+/* Players modal (mobile) */
+.solo-quiz-game .players-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.solo-quiz-game .players-modal {
+  width: 92%;
+  max-width: 400px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.solo-quiz-game .players-modal .players-list { max-height: 60vh; overflow-y: auto; }
+.solo-quiz-game .modal-close { margin-top: 0.5rem; width: 100%; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.12); color: white; padding: 0.5rem; border-radius: 8px; }
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+  .solo-quiz-game .lobby-layout { grid-template-columns: 1fr; }
+  .solo-quiz-game .players-sidebar { display: none; }
+  .solo-quiz-game .players-toggle { display: inline-flex; align-items: center; gap: 6px; }
+}
+
+/* Mobile adjustments for lobby meta summary */
+@media (max-width: 600px) {
+  .solo-quiz-game .lobby-layout { padding: 0.75rem; }
+  .solo-quiz-game .lobby-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+  .solo-quiz-game .lobby-meta .meta-item:last-child { grid-column: 1 / -1; }
+  .solo-quiz-game .lobby-meta .meta-label { font-size: 0.8rem; }
+  .solo-quiz-game .lobby-meta .meta-value { font-size: 1.05rem; }
+}
+
+@media (max-width: 380px) {
+  .solo-quiz-game .lobby-meta { grid-template-columns: 1fr; }
+  .solo-quiz-game .lobby-meta .meta-item { text-align: left; }
+}
+
+.game-stats-header {
+  display: flex;
+  gap: 2rem;
+}
+
+.score-display, .streak-display {
+  text-align: center;
+}
+
+.score-value, .streak-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-label, .streak-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* Timer Circle */
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 0;
+}
+
+.timer-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timer-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Question Display */
+.solo-quiz-game .question-display {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.solo-quiz-game .question-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Answer Options */
+.solo-quiz-game .answer-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.solo-quiz-game .answer-button {
+  background: #3498db;
+  border: none;
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+}
+
+.solo-quiz-game .answer-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.solo-quiz-game .answer-button:active {
+  transform: scale(0.98);
+}
+
+.solo-quiz-game .answer-button.selected {
+  transform: scale(1.1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  border: 4px solid white;
+}
+
+.solo-quiz-game .answer-button.correct {
+  background: #2ecc71 !important;
+  animation: correctPulse 0.6s ease-in-out;
+}
+
+.solo-quiz-game .answer-button.incorrect {
+  background: #e74c3c !important;
+  animation: incorrectShake 0.6s ease-in-out;
+}
+
+.solo-quiz-game .answer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.solo-quiz-game .answer-shape {
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.solo-quiz-game .answer-text {
+  text-align: center;
+  line-height: 1.3;
+}
+
+.solo-quiz-game .answer-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  animation: fadeInScale 0.5s ease-out;
+}
+
+/* Score Animation */
+.score-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.score-popup {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #f1c40f;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  animation: scorePopup 2s ease-out;
+}
+
+/* Progress Bar */
+.solo-quiz-game .progress-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.solo-quiz-game .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #f1c40f, #e67e22);
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.solo-quiz-game .progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Game Complete Screen */
+.solo-quiz-game.complete {
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.game-complete-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.final-score-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.performance-badge {
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.performance-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.performance-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.final-score h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  color: #f1c40f;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.final-score p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0 0;
+  opacity: 0.8;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1c40f;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.game-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.play-again-btn, .back-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.play-again-btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+}
+
+.play-again-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes correctPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes incorrectShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+@keyframes fadeInScale {
+  0% { opacity: 0; transform: scale(0); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scorePopup {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(50px);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-20px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1) translateY(-40px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-80px);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .solo-quiz-game .game-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    padding-top: 4rem;
+  }
+
+  .solo-quiz-game .back-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .solo-quiz-game .back-button #text{
+    display: none;
+  }
+
+  .solo-quiz-game .game-stats-header {
+    gap: 1rem;
+  }
+
+  .solo-quiz-game .question-text {
+    font-size: 1.8rem;
+  }
+
+  .solo-quiz-game .answer-options {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .solo-quiz-game .answer-button {
+    min-height: 120px;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
+
+  .solo-quiz-game .answer-shape {
+    font-size: 2rem;
+  }
+
+  .solo-quiz-game .timer-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .solo-quiz-game .timer-value {
+    font-size: 2rem;
+  }
+
+  .solo-quiz-game .final-score h1 {
+    font-size: 3rem;
+  }
+
+  .solo-quiz-game .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .solo-quiz-game .game-actions {
+    flex-direction: column;
+  }
+
+  .solo-quiz-game .play-again-btn, .solo-quiz-game .back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .solo-quiz-game .question-text {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .solo-quiz-game .answer-button {
+    min-height: 100px;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .solo-quiz-game .answer-shape {
+    font-size: 1.5rem;
+  }
+
+  .solo-quiz-game .timer-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .solo-quiz-game .timer-value {
+    font-size: 1.5rem;
+  }
+
+  .solo-quiz-game .final-score-card {
+    padding: 2rem;
+  }
+
+  .solo-quiz-game .final-score h1 {
+    font-size: 2.5rem;
+  }
+
+  .solo-quiz-game .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

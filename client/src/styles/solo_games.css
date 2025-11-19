@@ -1,0 +1,194 @@
+.solo-games-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solo-games-container .back-button {
+  background: none;
+  border: none;
+  color: #03a696;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.solo-games-container .back-button:hover {
+  transform: translateX(-5px);
+}
+
+.solo-games-container .back-button i {
+  font-size: 1.2rem;
+}
+
+.solo-games-title {
+  color: #03a696;
+  font-family: 'Fredoka One', cursive;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.solo-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.solo-game-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.solo-game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.solo-game-card-header {
+  background: #03a696;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.solo-game-card-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.solo-game-card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.game-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.game-features li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.game-features li::before {
+  content: "•";
+  color: #03a696;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.play-button {
+  background: #f3e230;
+  color: #333;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.play-button:hover {
+  background: #03a696;
+  color: white;
+  transform: scale(1.02);
+}
+
+/* Loading State */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .solo-games-container {
+    padding: 1rem;
+  }
+
+  .solo-games-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .solo-games-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .solo-game-card {
+    min-height: 300px;
+  }
+
+  .solo-game-card-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation for card entrance */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.solo-game-card {
+  animation: cardEntrance 0.5s ease forwards;
+}
+
+.solo-games-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.solo-games-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.solo-games-grid > *:nth-child(3) { animation-delay: 0.3s; } 

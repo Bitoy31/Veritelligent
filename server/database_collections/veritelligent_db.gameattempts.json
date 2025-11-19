@@ -1,0 +1,647 @@
+[{
+  "_id": {
+    "$oid": "68a94a2222aab3532aec953b"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a8765b6d4b4da2cb44aa46"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T04:57:06.305Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 10,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-23T04:57:06.955Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T04:57:06.955Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68a96b19e5c63a640c71f37c"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a96b17e5c63a640c71f37a"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T07:17:44.999Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "in_progress",
+  "createdAt": {
+    "$date": "2025-08-23T07:17:45.250Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T07:17:45.250Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68a96cfce5c63a640c71f682"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a96cfae5c63a640c71f680"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T07:25:48.875Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "in_progress",
+  "createdAt": {
+    "$date": "2025-08-23T07:25:48.907Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T07:25:48.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68a96f54e5c63a640c71f880"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a96f52e5c63a640c71f87e"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T07:35:48.791Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "in_progress",
+  "createdAt": {
+    "$date": "2025-08-23T07:35:48.816Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T07:35:48.816Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68a9731be5c63a640c71fa0e"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a97319e5c63a640c71fa0c"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T07:51:55.516Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "in_progress",
+  "createdAt": {
+    "$date": "2025-08-23T07:51:55.552Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T07:51:55.552Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68a97b36e5c63a640c71fea4"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a97b33e5c63a640c71fea2"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T08:26:30.373Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "in_progress",
+  "createdAt": {
+    "$date": "2025-08-23T08:26:30.402Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T08:26:30.402Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68a9bbd2e5c63a640c72004a"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a9bbd1e5c63a640c720048"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T13:02:10.911Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "in_progress",
+  "createdAt": {
+    "$date": "2025-08-23T13:02:10.960Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T13:02:10.960Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68a9c4b79aad0705bf5c2594"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a9c4b59aad0705bf5c2592"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T13:40:07.952Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-23T13:40:07.975Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T13:40:35.931Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-23T13:40:35.864Z"
+  },
+  "timeSpentSec": 33
+},
+{
+  "_id": {
+    "$oid": "68a9c5129aad0705bf5c2750"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68a9c5109aad0705bf5c274e"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-23T13:41:38.229Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-23T13:41:38.260Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-23T13:42:04.648Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-23T13:42:04.617Z"
+  },
+  "timeSpentSec": 35
+},
+{
+  "_id": {
+    "$oid": "68aa92c6fc273ac81ca45068"
+  },
+  "taskId": {
+    "$oid": "689882c065245356a97e9459"
+  },
+  "sessionId": {
+    "$oid": "68aa92c4fc273ac81ca45066"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-24T04:19:18.339Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 10,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-24T04:19:18.376Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-24T04:20:23.477Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-24T04:20:23.455Z"
+  },
+  "timeSpentSec": 71
+},
+{
+  "_id": {
+    "$oid": "68aaa1cffc273ac81ca452f5"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68aaa1cdfc273ac81ca452f3"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-24T05:23:27.929Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-24T05:23:27.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-24T05:23:55.086Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-24T05:23:55.075Z"
+  },
+  "timeSpentSec": 40
+},
+{
+  "_id": {
+    "$oid": "68aaa1d0fc273ac81ca452f7"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68aaa1cdfc273ac81ca452f3"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "68654a110b9b8bd691765d1a"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-24T05:23:27.996Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-24T05:23:28.013Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-24T05:23:55.098Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-24T05:23:55.083Z"
+  },
+  "timeSpentSec": 35
+},
+{
+  "_id": {
+    "$oid": "68aaa3fbfc273ac81ca454fa"
+  },
+  "taskId": {
+    "$oid": "689882c065245356a97e9459"
+  },
+  "sessionId": {
+    "$oid": "68aaa3f9fc273ac81ca454f8"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "68654a110b9b8bd691765d1a"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-24T05:32:43.621Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 10,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-24T05:32:43.637Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-24T05:33:46.453Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-24T05:33:46.397Z"
+  },
+  "timeSpentSec": 81
+},
+{
+  "_id": {
+    "$oid": "68aaa3fcfc273ac81ca454fc"
+  },
+  "taskId": {
+    "$oid": "689882c065245356a97e9459"
+  },
+  "sessionId": {
+    "$oid": "68aaa3f9fc273ac81ca454f8"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "684679995b32eb1c62307013"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-24T05:32:44.005Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 10,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-24T05:32:44.018Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-24T05:33:46.395Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-24T05:33:46.365Z"
+  },
+  "timeSpentSec": 84
+},
+{
+  "_id": {
+    "$oid": "68ad4c610807d6bb46f4bc9e"
+  },
+  "taskId": {
+    "$oid": "689ec61abb798e5f78e4c11b"
+  },
+  "sessionId": {
+    "$oid": "68ad4c5d0807d6bb46f4bc9c"
+  },
+  "subjectId": {
+    "$oid": "6858f75a16b5be1db813f637"
+  },
+  "studentId": {
+    "$oid": "68654a110b9b8bd691765d1a"
+  },
+  "category": "solo",
+  "gameType": "quiz",
+  "attemptNo": 1,
+  "startedAt": {
+    "$date": "2025-08-26T05:55:45.790Z"
+  },
+  "answers": [],
+  "scoringPolicy": {
+    "totalPointsPossible": 3,
+    "allowRetries": false,
+    "quickAnswerBonus": false,
+    "streakBonus": false
+  },
+  "totalScore": 0,
+  "bonusPoints": 0,
+  "finalScore": 0,
+  "status": "completed",
+  "createdAt": {
+    "$date": "2025-08-26T05:55:45.889Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-26T05:56:13.386Z"
+  },
+  "__v": 0,
+  "endedAt": {
+    "$date": "2025-08-26T05:56:13.311Z"
+  },
+  "timeSpentSec": 59
+}]
