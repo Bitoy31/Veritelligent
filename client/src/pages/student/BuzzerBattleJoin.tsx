@@ -25,7 +25,7 @@ const BuzzerBattleJoin: React.FC = () => {
 
   const handleQRCodeScanned = (code: string) => {
     setShowQRScanner(false);
-    navigate(`/student/buzzer-battle/${(code || '').toUpperCase()}`);
+    navigate(`${(code || '').toUpperCase()}`);
   };
 
   return (
