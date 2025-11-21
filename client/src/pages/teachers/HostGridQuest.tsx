@@ -239,7 +239,7 @@ const HostGridQuest: React.FC = () => {
       socketRef.current.emit('gq_board_started', { roomCode, categories, grid });
     }
   };
-  const getQRCodeURL = () => `http://localhost:3000/student/grid-quest/${roomCode}`;
+  const getQRCodeURL = () => `https://api.veritelligent.fun/student/grid-quest/${roomCode}`;
 
   const startClue = () => {
     setPhase('clue');

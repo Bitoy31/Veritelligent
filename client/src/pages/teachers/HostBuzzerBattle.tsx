@@ -473,10 +473,6 @@ const HostBuzzerBattle: React.FC = () => {
     navigate(`/teacher/buzzer-battle-analytics/${sessionId}`);
   };
 
-  const getQRCodeURL = () => {
-    return `http://localhost:3000/student/buzzer-battle/${roomCode}`;
-  };
-
   const currentQuestion = task?.questions?.[gameState.currentQuestion];
   const sortedTeams = [...teams].sort((a, b) => b.score - a.score);
 
@@ -596,7 +592,7 @@ const HostBuzzerBattle: React.FC = () => {
                 </div>
                 <p style={{ textAlign: 'center', color: '#1e3c72' }}>Scan to join. Room Code: <strong>{roomCode}</strong></p>
                 <div className="bb-qr-container" style={{ display: 'flex', justifyContent: 'center' }}>
-                  <QRCode value={`http://localhost:3000/student/buzzer-battle/${roomCode}`} size={180} />
+                  <QRCode value={`https://api.veritelligent.fun/student/buzzer-battle/${roomCode}`} size={180} />
                 </div>
               </div>
               
