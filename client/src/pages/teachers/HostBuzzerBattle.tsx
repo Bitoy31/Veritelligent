@@ -592,7 +592,7 @@ const HostBuzzerBattle: React.FC = () => {
                 </div>
                 <p style={{ textAlign: 'center', color: '#1e3c72' }}>Scan to join. Room Code: <strong>{roomCode}</strong></p>
                 <div className="bb-qr-container" style={{ display: 'flex', justifyContent: 'center' }}>
-                  <QRCode value={`https://api.veritelligent.fun/student/buzzer-battle/${roomCode}`} size={180} />
+                  <QRCode value={`https://veritelligent.fun/student/buzzer-battle/${roomCode}`} size={180} />
                 </div>
               </div>
               
