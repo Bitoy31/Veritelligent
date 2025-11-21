@@ -1,0 +1,443 @@
+/* Flashcard Analytics Styles */
+/* Uses similar structure to Grid Quest Analytics but with flashcard theme */
+
+:root {
+  --fc-primary: #ff6b6b;
+  --fc-secondary: #ffd93d;
+  --fc-accent: #6bcf7f;
+  --fc-surface: #fff9f0;
+  --fc-ink: #2d3748;
+}
+
+.fca-page {
+  padding: 0.75rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--fc-surface);
+}
+
+.fca-loading,
+.fca-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+}
+
+.fca-loading i {
+  font-size: 2.25rem;
+  color: var(--fc-primary);
+  animation: spin 1s linear infinite;
+}
+
+.fca-error i {
+  font-size: 2.25rem;
+  color: var(--fc-primary);
+}
+
+.fca-error h3 {
+  font-family: 'Fredoka One', cursive;
+  color: var(--fc-primary);
+  margin: 0;
+}
+
+.fca-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.fca-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.fca-back-btn {
+  background: none;
+  border: none;
+  color: var(--fc-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.fca-back-btn:hover {
+  transform: translateX(-5px);
+}
+
+.fca-header-info h1 {
+  font-family: 'Fredoka One', cursive;
+  color: var(--fc-primary);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.fca-header-meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.fca-header-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--fc-ink);
+  font-size: 0.85rem;
+}
+
+.fca-btn-export {
+  background: var(--fc-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.fca-btn-export:hover:not(:disabled) {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.fca-btn-export:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fca-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.fca-card {
+  background: white;
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.fca-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.fca-card-icon {
+  font-size: 1.5rem;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.fca-card-primary .fca-card-icon {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--fc-primary);
+}
+
+.fca-card-success .fca-card-icon {
+  background: rgba(107, 207, 127, 0.1);
+  color: var(--fc-accent);
+}
+
+.fca-card-info .fca-card-icon {
+  background: rgba(255, 217, 61, 0.1);
+  color: var(--fc-secondary);
+}
+
+.fca-card-warning .fca-card-icon {
+  background: rgba(78, 205, 196, 0.1);
+  color: #4ecdc4;
+}
+
+.fca-card-content {
+  flex: 1;
+}
+
+.fca-card-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--fc-ink);
+}
+
+.fca-card-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.fca-section {
+  margin-bottom: 1.25rem;
+}
+
+.fca-section:last-child {
+  margin-bottom: 0;
+}
+
+.fca-section-title {
+  font-family: 'Fredoka One', cursive;
+  color: var(--fc-primary);
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.fca-table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.fca-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fca-table thead {
+  background: rgba(255, 107, 107, 0.05);
+}
+
+.fca-table th {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--fc-primary);
+  font-size: 0.85rem;
+  border-bottom: 2px solid rgba(255, 107, 107, 0.2);
+}
+
+.fca-table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.fca-table tbody tr:hover {
+  background: rgba(255, 107, 107, 0.02);
+}
+
+.fca-left {
+  text-align: left;
+}
+
+.fca-center {
+  text-align: center;
+}
+
+.fca-right {
+  text-align: right;
+}
+
+.fca-correct {
+  color: var(--fc-accent);
+  font-weight: 600;
+}
+
+.fca-wrong {
+  color: var(--fc-primary);
+  font-weight: 600;
+}
+
+.fca-score {
+  color: var(--fc-ink);
+  font-weight: 700;
+}
+
+.fca-question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fca-question-item {
+  background: white;
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.fca-question-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.fca-question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.fca-question-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.fca-question-number {
+  background: var(--fc-primary);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.fca-question-text {
+  color: var(--fc-ink);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.fca-question-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.fca-question-points {
+  color: var(--fc-secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.fca-question-accuracy {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.fca-question-accuracy.high {
+  background: rgba(107, 207, 127, 0.1);
+  color: var(--fc-accent);
+}
+
+.fca-question-accuracy.med {
+  background: rgba(255, 217, 61, 0.1);
+  color: var(--fc-secondary);
+}
+
+.fca-question-accuracy.low {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--fc-primary);
+}
+
+.fca-question-details {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .fca-summary {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .fca-page {
+    padding: 0.6rem;
+  }
+
+  .fca-header {
+    padding: 0.6rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fca-header-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .fca-summary {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .fca-card {
+    padding: 0.6rem;
+  }
+
+  .fca-card-icon {
+    font-size: 1.25rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .fca-card-value {
+    font-size: 1.2rem;
+  }
+
+  .fca-section-title {
+    font-size: 1rem;
+  }
+
+  .fca-question-header {
+    flex-direction: column;
+  }
+
+  .fca-question-stats {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .fca-summary {
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .fca-header-info h1 {
+    font-size: 1.05rem;
+  }
+
+  .fca-table {
+    font-size: 0.8rem;
+  }
+
+  .fca-table th,
+  .fca-table td {
+    padding: 0.45rem 0.6rem;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

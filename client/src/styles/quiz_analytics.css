@@ -1,0 +1,125 @@
+/* Quiz Session Analytics scoped adjustments to match other analytics pages (size/spacing), keep colors from rlb styles */
+
+.quiz-analytics .rlb-header {
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.quiz-analytics .rlb-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Metrics - match compact look */
+.quiz-analytics .rlb-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin: 12px 16px;
+}
+
+.quiz-analytics .metric-card {
+  padding: 8px;
+}
+
+.quiz-analytics .metric-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.quiz-analytics .metric-label {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+/* Card head and table sizing to align with other pages */
+.quiz-analytics .rlb-card-head h3 {
+  font-size: 1rem;
+}
+
+.quiz-analytics .rlb-table {
+  font-size: 12px;
+}
+
+.quiz-analytics .rlb-table thead th {
+  font-size: 11px;
+}
+
+/* Question analysis two-column grid that stacks on mobile */
+.quiz-analytics .qsa-question-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .quiz-analytics .rlb-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 8px;
+    margin: 12px;
+  }
+  .quiz-analytics .metric-card {
+    padding: 6px;
+  }
+  .quiz-analytics .metric-value {
+    font-size: 14px;
+  }
+  .quiz-analytics .metric-label {
+    font-size: 9px;
+  }
+  .quiz-analytics .rlb-table {
+    font-size: 11.5px;
+  }
+
+  /* Keep student ranking table as real rows/columns on mobile for readability */
+  .quiz-analytics .rlb-table thead {
+    display: table-header-group;
+  }
+  .quiz-analytics .rlb-table,
+  .quiz-analytics .rlb-table tbody {
+    display: table;
+    width: 100%;
+  }
+  .quiz-analytics .rlb-table tr {
+    display: table-row;
+    font-size: 9px;
+  }
+  .quiz-analytics .rlb-table td,
+  .quiz-analytics .rlb-table th {
+    display: table-cell;
+    position: static;
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .quiz-analytics .rlb-table td::before {
+    content: none;
+  }
+
+  /* Prevent header/columns from overextending the viewport */
+  .quiz-analytics .rlb-table {
+    table-layout: fixed;
+  }
+  .quiz-analytics .rlb-table thead th {
+    font-size: 10px;
+  }
+  .quiz-analytics .rlb-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Stack Performance Summary above Answer Distribution on mobile */
+  .quiz-analytics .qsa-question-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
