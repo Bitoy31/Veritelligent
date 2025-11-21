@@ -25,7 +25,7 @@ const GridQuestJoin: React.FC = () => {
 
   const handleQRCodeScanned = (code: string) => {
     setShowQRScanner(false);
-    navigate(`${(code || '').toUpperCase()}`);
+    navigate(`/student/grid-quest/${(code || '').toUpperCase()}`);
   };
 
   return (
