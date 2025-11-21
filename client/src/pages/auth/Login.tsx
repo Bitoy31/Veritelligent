@@ -149,6 +149,44 @@ const Login: React.FC = () => {
         >
           Sign Up
         </Link>
+        
+        {/* Android App Download */}
+        <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e0e0e0' }}>
+          <a
+            href="/app-release.apk"
+            download="Veritelligent.apk"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              padding: '12px 20px',
+              backgroundColor: '#03a696',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontSize: '14px',
+              fontWeight: '500',
+              transition: 'background-color 0.3s',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#028a7a'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#03a696'}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 12L12 17M12 17L7 12M12 17V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Download Android App
+          </a>
+          <p style={{ 
+            marginTop: '8px', 
+            fontSize: '12px', 
+            color: '#666', 
+            textAlign: 'center' 
+          }}>
+            Get the mobile app for better experience
+          </p>
+        </div>
       </div>
     </div>
   );
